@@ -47,7 +47,7 @@ if (isset($_SESSION['username'])) {
                         <div class="card-body">
                             <div class="text-center mb-3">
                                 <i class="bi bi-person-circle h1 display-4"></i>
-                                <p>Zona Obrolan K-Drama</p>
+                                <p>Welcome to Zona Obrolan K-Drama</p>
                                 <hr />
                             </div>
                             <form action="" method="post" id="loginForm">
