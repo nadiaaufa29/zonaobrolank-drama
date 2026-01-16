@@ -138,7 +138,7 @@ if (isset($_POST['simpan'])) {
                                 username = ?
                                 WHERE id = ?");
 
-        $stmt->bind_param("sssssi", $judul, $gambar, $tanggal, $username, $id);
+        $stmt->bind_param("ssssi", $judul, $gambar, $tanggal, $username, $id);
         $simpan = $stmt->execute();
     } else {
 		    //jika tidak ada id, lakukan insert data baru
