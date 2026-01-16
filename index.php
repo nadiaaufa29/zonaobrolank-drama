@@ -119,33 +119,32 @@ include "koneksi.php";
     </section>
     <!-- article end -->
     <!-- gallery begin -->
-    <section id="gallery" class="text-center p-5 bg-primary-subtle">
+    <section id="gallery" class="text-center p-5">
         <div class="container">
-            <h1 class="fw-bold display-4 pb-3">gallery</h1>
-            <div id="carouselExample" class="carousel slide">
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img src="img/gallery1.jpg" class="d-block w-100" alt="fan art adegan drama lovely runner">
-                </div>
-                <div class="carousel-item">
-                  <img src="img/gallery2.jpg" class="d-block w-100" alt="fan art drama twenty five twenty one">
-                </div>
-                <div class="carousel-item">
-                  <img src="img/gallery3.jpg" class="d-block w-100" alt="fan art drama twinkling watermelon">
-                </div><div class="carousel-item">
-                  <img src="img/gallery4.jpg" class="d-block w-100" alt="fan art drama hospital playlist">
-                </div><div class="carousel-item">
-                  <img src="img/gallery5.jpg" class="d-block w-100" alt="fan art adegan drama when life gives you tangerines ">
+          <h1 class="fw-bold display-4 pb-3">gallery</h1>
+            <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+            <?php
+            $sql = "SELECT * FROM article ORDER BY tanggal DESC";
+            $hasil = $conn->query($sql); 
+
+            while($row = $hasil->fetch_assoc()){
+            ?>
+            <!-- col begin -->
+              <div class="col">
+                <div class="card h-100">
+                  <img src="img/<?= $row["gambar"]?>" class="card-img-top" alt="drama Korea Queen Mantis bergenre misteri psikologis">
+                  <div class="card-body">
+                    <h5 class="card-title"><?= $row["judul"]?></h5>
+                  </div>
+                  <div class="card-footer">
+                    <small class="text-body-secondary"><?= $row["tanggal"]?></small>
+                  </div>
                 </div>
               </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
+            <!-- col end -->
+            <?php
+            }
+            ?>
             </div>
         </div>
     </section>
