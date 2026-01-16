@@ -3,7 +3,7 @@
 $sql1 = "SELECT * FROM article ORDER BY tanggal DESC";
 $hasil1 = $conn->query($sql1);
 //query untuk mengambil data gallery
-$sql1 = "SELECT * FROM article ORDER BY tanggal DESC";
+$sql1 = "SELECT * FROM gallery ORDER BY tanggal DESC";
 $hasil1 = $conn->query($sql1);
 
 //menghitung jumlah baris data article
